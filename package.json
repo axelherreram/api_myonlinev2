@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,8 +13,16 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
     "knex": "^3.2.9",
-    "mysql2": "^3.22.3"
+    "morgan": "^1.10.1",
+    "mysql2": "^3.22.3",
+    "objection": "^3.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
