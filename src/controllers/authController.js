@@ -7,22 +7,8 @@ const crypto = require("crypto");
 // Import Objection models
 const User = require("../models/User");
 const Year = require("../models/Year");
-const AppLog = require("../models/AppLog"); // We will adapt logActivity directly here or in a separate file
+const { logActivity } = require("../helpers/appLog");
 const { sendEmailPasswordRecovery } = require("../services/emailService");
-
-// Log activity helper
-const logActivity = async (user_id, sede_id, action, details) => {
-  try {
-    await AppLog.query().insert({
-      user_id,
-      sede_id: sede_id || null,
-      action,
-      details,
-    });
-  } catch (error) {
-    console.error("Error logging activity:", error.message);
-  }
-};
 
 /**
  * registerUser
